@@ -7,5 +7,5 @@ Rails.application.routes.draw do
 
   get 'about' => 'abouts#top'
 
-  resources :users, only: [:show]
+  resources :users, only: [:show, :edit, :new, :index]
 end

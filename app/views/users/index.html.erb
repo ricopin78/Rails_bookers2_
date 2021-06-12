@@ -11,9 +11,10 @@
   <tbody>
     <tr>
       <div class="profile-container">
-  <h3 class="profile-name"><%= @user.name %></h3>
+  <h3 class="profile-name"><%= current_user.name %></h3>
   <%#= image_tag('sample-author1.jpg') %>
 </div>
+
 
   <div class="row">
     <a class="btn btn-outline-secondary btn-block fas fa-user-cog edit_user_10" href="/users/10/edit"></a>
@@ -58,17 +59,16 @@
         </td>
         <td>
           <a class="book_5" href="/books/5">リーダブルコード</a>
-        </td>
-        <td>より良いコードを書くためのシンプルで実践的なテクニック。</td>
+         </td>
+         <td>より良いコードを書くためのシンプルで実践的なテクニック。</td>
       </tr>
-  </tbody>
-</table>
-    </div>
+    </tbody>
+       
+      </table>
+     </div>
+   </div>
   </div>
-</div>
-      </main>
-
-
+</main>
 
 </body>
 </html>
