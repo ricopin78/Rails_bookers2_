@@ -52,6 +52,16 @@
 
    <tbody>
       <tr>
+        <% @books.each do |book| %>
+      <div>
+        <%= link_to book_path(book.id) do %>
+         <% end %>
+        <p>投稿ユーザー画像：</p>
+        <p>Title：<%= book.title %></p>
+        <p>Body：<%= book.body %></p>
+      </div>
+      <% end %>
+
         <td>
           <a href="/users/5">
             <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg">
@@ -63,7 +73,7 @@
          <td>より良いコードを書くためのシンプルで実践的なテクニック。</td>
       </tr>
     </tbody>
-       
+
       </table>
      </div>
    </div>
