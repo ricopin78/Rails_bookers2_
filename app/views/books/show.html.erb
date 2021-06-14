@@ -9,57 +9,53 @@
   transition: width 300ms ease-out, opacity 150ms 150ms ease-in;
   transform: translate3d(0, 0, 0);
 }</style>
-    
-    
 
-    
-    
+
+
+
+
     <link rel="stylesheet" media="all" href="/assets/application-16605eadccf37c23d1fa922dd614f45b9f2cf25723e2e4032f1975b02ea7d11f.css" data-turbolinks-track="reload">
     <script src="/assets/application-3ac47b8571e58aab844e8d0a988f0f55d8a16c1a75953470343f79cf1bec8528.js" data-turbolinks-track="reload"></script>
   <title>Bookers2Ver2</title><meta name="csrf-param" content="authenticity_token"><meta name="csrf-token" content="JDqLmwCji0EhHwOMWh9510Ifj+tXIak9yKkQ6ojwHP2A+RKO4qW4XMTQhzTA9zQTPCv2jXBq/NuAIvA9Jm9sQw=="><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></head>
+
   <body>
-    <header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="/"><span>Bookers</span></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav ml-auto">
-          <li><a class="fas fa-home nav-link text-light" href="/users/10"> Home</a></li>
-          <li><a class="fas fa-users nav-link text-light" href="/users"> Users</a></li>
-          <li><a class="fas fa-book-open nav-link text-light" href="/books"> Books</a></li>
-          <li><a class="fas fa-sign-out-alt nav-link text-light" rel="nofollow" data-method="delete" href="/users/sign_out"> logout</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
+
       <main>
         <p id="notice"></p>
         <div class="container">
   <div class="row">
     <div class="col-md-3">
       <h2>User info</h2>
-      <img class="attachment user profile_image fallback" src="/assets/no_image-ede28af4bad96368ef41be1b4be1cffce0d9402540f75d17895e32cb0d2af5e6.jpg"><table class="table">
-  <tbody><tr></tr>
+
+  <tbody>
+
+
   <tr>
 	  <th>name</th>
-	  <th>Lucas</th>
+	  <th><%= current_user.name %></th>
   </tr>
   <tr>
 	  <th>introduction</th>
 	  <th>Hello!!</th>
   </tr>
 </tbody></table>
-　
+
 <div class="row">
   <a class="btn btn-outline-secondary btn-block fas fa-user-cog edit_user_7" href="/users/7/edit"></a>
 </div>
       <h2 class="mt-3">New book</h2>
       <form action="/books" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="2U9H28W4zAgVmfJrm0nXFrhLnkzk6/ABFWr0B7Fl8NHwHafDlVVtJbNZcht2SJuVnjraeZHP/YfM+XIs67GOQQ==">
   <div class="form-group">
+
+    <%= form_with model: @book, url: books_path, local:true do |f| %>
+  <h4>Title</h4>
+  <%= f.text_field :title %>
+  <h4>Body</h4>
+  <%= f.text_area :body %>
+  <%= f.submit 'submit' %>
+<% end %>
+
+    <!--
     <label for="book_title">Title</label>
     <input class="form-control book_title" type="text" name="book[title]" id="book_title">
   </div>
@@ -72,6 +68,9 @@
   </div>
 </form>
     </div>
+
+    -->
+
     <div class="col-md-8 offset-md-1">
   		<h2>Book detail</h2>
   		<table class="table">
@@ -88,16 +87,8 @@
   </div>
 </div>
       </main>
-    <footer>
-  <div class="container mt-5">
-  	<div class="row">
-    	<div class="mx-auto">
-    		<p>CopyRight Infratop.inc</p>
-    	</div>
-    </div>
-  </div>
-</footer>
 
-  
+
+
 
 </body></html>
