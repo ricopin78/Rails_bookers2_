@@ -1,22 +1,5 @@
-<html><head><style type="text/css">.turbolinks-progress-bar {
-  position: fixed;
-  display: block;
-  top: 0;
-  left: 0;
-  height: 3px;
-  background: #0076ff;
-  z-index: 9999;
-  transition: width 300ms ease-out, opacity 150ms 150ms ease-in;
-  transform: translate3d(0, 0, 0);
-}</style>
+<html>
 
-
-
-
-
-    <link rel="stylesheet" media="all" href="/assets/application-16605eadccf37c23d1fa922dd614f45b9f2cf25723e2e4032f1975b02ea7d11f.css" data-turbolinks-track="reload">
-    <script src="/assets/application-3ac47b8571e58aab844e8d0a988f0f55d8a16c1a75953470343f79cf1bec8528.js" data-turbolinks-track="reload"></script>
-  <title>Bookers2Ver2</title><meta name="csrf-param" content="authenticity_token"><meta name="csrf-token" content="JDqLmwCji0EhHwOMWh9510Ifj+tXIak9yKkQ6ojwHP2A+RKO4qW4XMTQhzTA9zQTPCv2jXBq/NuAIvA9Jm9sQw=="><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></head>
 
   <body>
 
@@ -26,34 +9,24 @@
   <div class="row">
     <div class="col-md-3>
 
+
+
     <%= render 'users/info', user: @user, book: @book %>
 
     <div class="col-md-8 offset-md-1">
   		<h2>Book detail</h2>
 
-  		<% @books.each do |book| %>
       <div>
-        <%= link_to book_path(book.id) do %>
-       <p>Title：<%= book.title %></p>
-         <% end %>
         <p>投稿ユーザー画像：</p>
-        <p>Title：<%= book.title %></p>
-        <p>Body：<%= book.body %></p>
+        <p>Title：<%= @book_id.title %></p>
+        <p>Body：<%= @book_id.body %></p>
       </div>
+
+        <% if @book.user == current_user %>
+        <%= link_to "destroy", book_path(@book), method: :delete %>
+
       <% end %>
 
-  	<!--	<table class="table">
-  		  <tbody><tr>
-          <td><a href="/users/7">
-            <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg"><br>
-            Lucas
-</a>          </td>
-          <td><a href="/books/7">たのしいRuby</a></td>
-          <td>Rubyの入門におすすめです。</td>
-        </tr>
-      </tbody></table>
-
-      -->
 
     </div>
   </div>
@@ -63,4 +36,5 @@
 
 
 
-</body></html>
+</body>
+</html>
