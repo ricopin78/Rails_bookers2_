@@ -11,7 +11,10 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @book = Book.new
     @books = Book.all
+    @user = current_user.id
   end
+
+
 
 
   def destroy
