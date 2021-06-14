@@ -10,7 +10,8 @@
     <tr>
       <div class="profile-container">
   <h3 class="profile-name"><%= @user.name %></h3>
-  <%#= image_tag('sample-author1.jpg') %>
+  <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+
 </div>
 
 <%= form_with model: @book, url: books_path, local:true do |f| %>
@@ -64,7 +65,7 @@
         <%= link_to book_path(book.id) do %>
        <p>Title：<%= book.title %></p>
          <% end %>
-        <p>投稿ユーザー画像：</p>
+        <p>投稿ユーザー画像：<%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></p>
         <p>Title：<%= book.title %></p>
         <p>Body：<%= book.body %></p>
       </div>
