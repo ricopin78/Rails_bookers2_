@@ -5,6 +5,7 @@ before_action :authenticate_user!
 
   def index
     @books = Book.all
+    @user = current_user.id
     @book = Book.new
   end
 
@@ -31,8 +32,6 @@ before_action :authenticate_user!
   def user_params
     params.require(:user).permit(:name, :profile_image)
   end
-
-
 
 
 end
