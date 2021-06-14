@@ -11,7 +11,8 @@
     <tr>
       <div class="profile-container">
   <h3 class="profile-name"><%= current_user.name %></h3>
-  <%#= image_tag('sample-author1.jpg') %>
+  <%= attachment_image_tag @user, :user, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+
 </div>
 
 <%= form_with model: @book, url: books_path, local:true do |f| %>
@@ -66,7 +67,7 @@
         <%= link_to book_path(book.id) do %>
        <p>Title：<%= book.title %></p>
          <% end %>
-        <p>投稿ユーザー画像：</p>
+        <p>投稿ユーザー画像：<%= attachment_image_tag book.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></p>
         <p>Title：<%= book.title %></p>
         <p>Body：<%= book.body %></p>
       </div>
@@ -74,10 +75,10 @@
 
         <td>
           <a href="/users/5">
-            <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg">
+
           </a>
         </td>
-        
+
         <td>
           <a class="book_5" href="/books/5">リーダブルコード</a>
          </td>
