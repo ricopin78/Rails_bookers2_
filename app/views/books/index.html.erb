@@ -1,0 +1,58 @@
+ <body>
+   <main>
+     <p id="notice"></p>
+     <div class="container px-5 px-sm-0">
+
+  <div class="row">
+    <div class="col-md-3">
+
+
+<%= render 'users/info', user: @user, book: @book%>
+
+    <div class="col-md-8 offset-md-1">
+      <h2>Books</h2>
+      <table class="table table-hover table-inverse">
+    <thead>
+    <tr>
+      <th>Title</th>
+      <th>Opinion</th>
+      <th colspan="3"></th>
+    </tr>
+    </thead>
+
+   <tbody>
+     <% @books.each do |book| %>
+      <div>
+        <%= link_to book_path(book.id) do %>
+       <p>Title：<%= book.title %></p>
+         <% end %>
+        <p>投稿ユーザー画像：</p>
+        <p>Title：<%= book.title %></p>
+        <p>Body：<%= book.body %></p>
+      </div>
+      <% end %>
+
+      <!-- <td>
+          <a href="/users/5">
+            <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg">
+          </a>
+        </td>
+        <td>
+          <a class="book_5" href="/books/5">リーダブルコード</a>
+        </td>
+        <td>より良いコードを書くためのシンプルで実践的なテクニック。</td>
+
+        -->
+
+      </tr>
+  </tbody>
+</table>
+    </div>
+  </div>
+</div>
+      </main>
+
+
+
+</body>
+</html>
