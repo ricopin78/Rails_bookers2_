@@ -13,9 +13,7 @@
 }</style>
 
 
-    <link rel="stylesheet" media="all" href="/assets/application-16605eadccf37c23d1fa922dd614f45b9f2cf25723e2e4032f1975b02ea7d11f.css" data-turbolinks-track="reload">
-    <script src="/assets/application-3ac47b8571e58aab844e8d0a988f0f55d8a16c1a75953470343f79cf1bec8528.js" data-turbolinks-track="reload"></script>
-  <title>Bookers2Ver2</title><meta name="csrf-param" content="authenticity_token"><meta name="csrf-token" content="4RjqV1ZI5T8kjKLfCjazCDIZkF/OWyfHRZtg60zDlNFF23NCtE7WIsFDJmeQ3v7MTC3pOekQciENEIA84lzkbw=="><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></head>
+</head>
   <body>
 
       <main>
@@ -26,11 +24,17 @@
 
      <h2>User info</h2>
        <%= form_with model:@user, local:true do |f| %>
+
         <label for="inputName">Name</label>
         <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"Name"%>
         <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
+
        <label for="inputImage">ProfileImage</label>
         <%= f.attachment_field :profile_image, placeholder: "ProfileImage" %>
+
+                <label for="inputName">Introduction</label>
+        <%= f.text_field :introduction, autofocus: true, id:"inputIntroduction", placeholder:"introduction"%>
+
         <%= f.submit "Update User" %>
       <% end %>
 

@@ -6,7 +6,7 @@
 
   <h3 class="profile-name"><%= current_user.name %></h3>
   <%= attachment_image_tag current_user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
-
+  <h3 class="profile-introduction">Introduction: <%= current_user.introduction %></h3>
     <%= link_to "プロフィール編集", edit_user_path(@user)%>
 
 </div>
