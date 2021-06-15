@@ -7,6 +7,7 @@ before_action :authenticate_user!
     @books = Book.all
     @user = current_user.id
     @book = Book.new
+    @users = User.all
   end
 
   def show
