@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   resources :users
 
 
-  get '/home/about' => 'homes#top'
+  get 'home/about' => 'homes#about'
 
 end
