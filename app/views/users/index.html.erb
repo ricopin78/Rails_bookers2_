@@ -31,7 +31,7 @@
           <tr>
         <% @users.each do |user| %>
       <div>
-        <td>投稿ユーザー画像：</td>
+        <td>投稿ユーザー画像：<%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></td>
         <td><%= user.name %></td>
         <td><%= link_to "Show", user_path(user.id) %></td>
       </div>
