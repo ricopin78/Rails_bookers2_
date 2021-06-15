@@ -33,6 +33,7 @@
       <div>
         <td>投稿ユーザー画像：</td>
         <td><%= user.name %></td>
+        <td><%= link_to "Show", user_path(user.id) %></td>
       </div>
       <% end %>
   </tbody>
