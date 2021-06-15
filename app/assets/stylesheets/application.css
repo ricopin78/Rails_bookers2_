@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap";
+ @import 'font-awesome-sprockets';
+ @import 'font-awesome';
 
 head {
   display: none;
@@ -27,6 +30,14 @@ html {
 
 
 /* header */
+
+/*
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+*/
 
 article,
 aside,
@@ -92,7 +103,8 @@ section {
     padding-left: 0;
 }
 
-.navbar-dark .navbar-brand {
+.navbar-dark
+.navbar-brand {
     color: #fff;
 }
 
@@ -128,15 +140,18 @@ button,
     -webkit-appearance: button;
 }
 
+/*
 button,
 select {
     text-transform: none;
 }
+*/
 
 button, input {
     overflow: visible;
 }
 
+/*
 input,
 button,
 select,
@@ -148,6 +163,9 @@ textarea {
     line-height: inherit;
 }
 
+*/
+
+/*
 button {
     appearance: auto;
     -webkit-writing-mode: horizontal-tb !important;
@@ -172,9 +190,10 @@ button {
     border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
     border-image: initial;
 }
+*/
 
 .navbar-dark .navbar-toggler-icon {
-    background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 .navbar-toggler-icon {
@@ -192,7 +211,7 @@ button {
     border-color: rgba(255,255,255,0.1);
 }
 
-utton:not(:disabled),
+button:not(:disabled),
 [type="button"]:not(:disabled),
 [type="reset"]:not(:disabled),
 [type="submit"]:not(:disabled) {
@@ -257,13 +276,38 @@ li {
     line-height: 1;
 }
 
-.text-light {
-    color: #f8f9fa !important;
-}
 
 .nav-link {
     display: block;
     padding: 0.5rem 1rem;
+}
+
+.navbar-dark
+.navbar-nav
+.nav-link
+{
+    color: rgba(255,255,255,0.5);
+}
+
+.navbar-nav
+.nav-link {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.fa, .fas {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 600;
+    line-height: normal;
+}
+
+.fa, .fas, .far, .fal, .fad, .fab {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
 }
 
 a:-webkit-any-link {
@@ -274,4 +318,25 @@ a:-webkit-any-link {
 
 div {
     display: block;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+
+.text-light {
+    color: #f8f9fa !important
+
+}
+
+.fa-home:before {
+    content: "\f015";
+
 }
