@@ -10,12 +10,11 @@ before_action :authenticate_user!
     @users = User.all
   end
 
-
   def show
     @user = User.find(params[:id])
     @book = Book.new
     @books = @user.books
-  end
+  end 
 
   def edit
     @user = User.find(params[:id])
@@ -34,6 +33,5 @@ before_action :authenticate_user!
   def user_params
     params.require(:user).permit(:name, :profile_image, :introduction)
   end
-
 
 end
