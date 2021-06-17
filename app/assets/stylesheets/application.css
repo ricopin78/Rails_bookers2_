@@ -461,6 +461,13 @@ h2 {
 
 /* _info */
 
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
 table {
     display: table;
     border-collapse: separate;
@@ -490,11 +497,6 @@ th {
 .btn-block {
     display: block;
     width: 100%;
-}
-
-.btn-outline-secondary {
-    color: #6c757d;
-    border-color: #6c757d;
 }
 
 .btn {
@@ -557,4 +559,9 @@ thead {
     display: table-header-group;
     vertical-align: middle;
     border-color: inherit;
+}
+
+.btn-outline-secondary {
+    color: #6c757d;
+    border-color: #6c757d;
 }
