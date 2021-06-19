@@ -2,7 +2,6 @@ class UsersController < ApplicationController
 
 before_action :authenticate_user!
 
-
   def index
     @books = Book.all
     @user = current_user
@@ -14,7 +13,9 @@ before_action :authenticate_user!
     @user = User.find(params[:id])
     @book = Book.new
     @books = @user.books
-  end 
+    @book_id = Book.find(params[:id])
+
+  end
 
   def edit
     @user = User.find(params[:id])

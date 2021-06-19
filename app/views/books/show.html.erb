@@ -1,41 +1,25 @@
-<html>
-
-
-  <body>
-
-      <main>
-        <p id="notice"></p>
-        <div class="container">
-  <div class="row">
-    <div class="col-md-3>
-
-
-
-    <%= render 'users/info', user: @user, book: @book %>
-
-    <div class="col-md-8 offset-md-1">
-  		<h2>Book detail</h2>
-
-      <div>
-        <p>投稿ユーザー画像：</p>
-        <p>Title：<%= @book_id.title %></p>
-        <p>Body：<%= @book_id.body %></p>
+<main>
+  <p id="notice"></p>
+  <div class="container px-5 px-sm-0">
+    <div class="row">
+      <%= render 'users/info', user: @user, book: @book %>
+      <div class="col-md-8 offset-md-1">
+        <h2>Book detail</h2>
+        <tbody>
+          <tr>
+            <td><%= attachment_image_tag @book_id.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></td>
+            <td><%= @book_id.user.name %></td>
+            <td class ="book_351">
+              <%= link_to @book_id.title, book_path %>
+            </td>
+            <td><%= @book_id.body %></td>
+            <% if @book_id.user == current_user %>
+              <%= link_to"Edit",edit_book_path(book_id) %>
+              <%= link_to"destroy",book_path(book_id), method: :delete %>
+            <% end %>
+          </tr>
+        </tbody>
       </div>
-
-      <% if @book_id.user == current_user %>
-        <%= link_to"Edit",edit_book_path(@book_id) %>
-        <%= link_to"destroy",book_path(@book_id), method: :delete %>
-
-      <% end %>
-
-
     </div>
   </div>
-</div>
-      </main>
-
-
-
-
-</body>
-</html>
+</main>

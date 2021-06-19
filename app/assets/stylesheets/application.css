@@ -518,11 +518,6 @@ th {
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-form {
-    display: block;
-    margin-top: 0em;
-}
-
 .form-group {
     margin-bottom: 1rem;
 }
@@ -564,4 +559,9 @@ thead {
 .btn-outline-secondary {
     color: #6c757d;
     border-color: #6c757d;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
 }
