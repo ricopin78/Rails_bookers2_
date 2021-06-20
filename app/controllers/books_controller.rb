@@ -10,14 +10,18 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     @book.user_id = current_user.id
-    @book.save
-    redirect_back(fallback_location: root_path)
+    if @book.save
+      redirect_to books_path, success: 'Successfully Updated.'
+    else
+      render :index
+    end
+
   end
 
   def show
     @book_id = Book.find(params[:id])
     @book = Book.new
-    @user = User.find(params[:id])
+    @user = User.find_by(@book.user_id)
   end
 
 
