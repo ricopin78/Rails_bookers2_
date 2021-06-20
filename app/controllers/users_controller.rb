@@ -28,7 +28,6 @@ before_action :authenticate_user!
   end
 
 
-
   private
 
   def user_params
