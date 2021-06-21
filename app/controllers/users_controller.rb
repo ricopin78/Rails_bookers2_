@@ -4,16 +4,14 @@ before_action :authenticate_user!
 
   def index
     @books = Book.all
-    @user = current_user
     @book = Book.new
     @users = User.all
   end
 
   def show
     @user = User.find(params[:id])
+    @books = @user.books.page(params[:page]).reverse_order
     @book = Book.new
-    @books = @user.books
-    @book_id = Book.find(params[:id])
 
   end
 
@@ -30,9 +28,7 @@ before_action :authenticate_user!
     else
       render :edit
     end
-
   end
-
 
   private
 
