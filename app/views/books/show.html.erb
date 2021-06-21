@@ -23,8 +23,8 @@
               </td>
               <td><%= @book_id.body %></td>
               <% if @book_id.user == current_user %>
-                <td><%= link_to"Edit",edit_book_path(@book_id) %></td>
-                <td><%= link_to"destroy",book_path(@book_id), method: :delete %></td>
+                <td><%= link_to"Edit",edit_book_path(@book_id), class: "btn btn-sm btn-success" %></td>
+                <td><%= link_to"destroy",book_path(@book_id), method: :delete, class: "btn btn-sm btn-danger" %></td>
               <% end %>
             </tr>
           </tbody>
