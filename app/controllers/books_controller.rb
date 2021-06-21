@@ -40,7 +40,12 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     @book.update(book_params)
-    redirect_to users_path
+    if @book.save
+      redirect_to book_path(@book.id), success: 'Successfully Updated.'
+    else
+      render :index
+    end
+
   end
 
  private
