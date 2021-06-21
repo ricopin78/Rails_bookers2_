@@ -413,10 +413,6 @@ p {
 
 
 /* user_login */
-.notice
-.alert{
-    color: green;
-}
 
 p {
     margin-top: 0;
@@ -549,4 +545,9 @@ thead {
 form {
     display: block;
     margin-top: 0em;
+}
+
+#notice
+#alert {
+    color: green;
 }

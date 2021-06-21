@@ -49,11 +49,11 @@
     </header>
     <main>
 
-      <% if flash[:notice] %>
-      <p class="notice">
+      <div class="notice">
+        <% if flash[:notice] %>
         <%= flash[:notice] %>
         <% end %>
-      </p>
+      </div>
 
       <%= yield %>
 

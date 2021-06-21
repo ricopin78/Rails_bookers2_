@@ -23,7 +23,7 @@ before_action :authenticate_user!
     @user = User.find(params[:id])
     @user.update(user_params)
     if @user.save
-      flash[:notice] = "Successfully Updated."
+      flash[:notice] = "successfully Updated."
       redirect_to user_path(@user.id)
     else
       render :edit
