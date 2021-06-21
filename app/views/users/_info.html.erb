@@ -1,13 +1,11 @@
-<p class="notice"><%= flash[:success] %></p>
-
-  <p class="notice">
+<p class="notice">
   <% if book.errors.any? %>
     <%= book.errors.count %>Errors
     <% book.errors.full_messages.each do |message| %>
       <%= message %>
     <% end %>
   <% end %>
-  </p>
+</p>
 
 <div class="col-md-3">
   <h2>User info</h2>

@@ -36,7 +36,7 @@
               <li class="fas fa-home nav-link text-light">
               <%= link_to "Home", root_path %></li>
               <li class="fas fa-users nav-link text-light">
-              <%= link_to "About", home_about_path %></li>
+              <%= link_to "About",home_about_path  %></li>
               <li class="fas fa-book-open nav-link text-light">
               <%= link_to "sign up", new_user_registration_path %></li>
               <li class="fas fa-sign-out-alt nav-link text-light">
@@ -48,7 +48,15 @@
       </nav>
     </header>
     <main>
+
+      <% if flash[:notice] %>
+      <p class="notice">
+        <%= flash[:notice] %>
+        <% end %>
+      </p>
+
       <%= yield %>
+
     </main>
     <footer>
       <div class="container mt-5">
