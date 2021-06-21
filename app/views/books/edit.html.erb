@@ -1,7 +1,7 @@
-<h1>Editing Book</h1>
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+      <h1>Editing Book</h1>
       <div class="form-group">
         <%= form_with model:@book, local:true do |f| %>
         <label for="book_title">Title</label>
@@ -20,7 +20,7 @@
           <%= f.submit "Update Book" %>
         </div>
         <% end %>
-        <a class="book_351" href="/books/351">Show</a> |
+        <%= link_to "Show", book_path(@book.id) %>
   		  <a class="back" href="/books">Back</a>
       </div>
     </div>
