@@ -1,41 +1,29 @@
+<p id="notice"></p>
 <h1>Editing Book</h1>
-<%= form_with model:@book, local:true do |f| %>
-  <label for="book_title">Title</label>
-  <%= f.text_field :title %>
-   <label for="book_opinion">Opinion</label>
-  <%= f.text_field :body %>
-  <%= f.submit "Update Book" %>
-<% end %>
-
-
-
-<html>
-      <main>
-        <p id="notice"></p>
-        <div class="container">
+<div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-
-  		<form action="/books/351" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="patch"><input type="hidden" name="authenticity_token" value="NL4I+3fHDs3TmqZf5nbE9a+9OCiu2uPU/eKhplGBTrQaZeqAeTfuib8EIxZvFwGGlu9aBgBmElugnO4/TIXRzA==">
-  <div class="form-group">
-    <label for="book_title">Title</label>
-    <input class="form-control book_title" type="text" value="a" name="book[title]" id="book_title">
-  </div>
-  <div class="form-group">
-    <label for="book_opinion">Opinion</label>
-    <textarea class="form-control book_body" name="book[body]" id="book_body">b</textarea>
-  </div>
-  <div class="form-group">
-    <input type="submit" name="commit" value="Update Book" class="btn btn-success" data-disable-with="Update Book">
-  </div>
-</form>
-  		<a class="book_351" href="/books/351">Show</a> |
-  		<a class="back" href="/books">Back</a>
+      <div class="form-group">
+        <%= form_with model:@book, local:true do |f| %>
+        <label for="book_title">Title</label>
+          <div class="form-control book_title">
+            <%= f.text_field :title %>
+          </div>
+      </div>
+      <div class="form-group">
+        <label for="book_opinion">Opinion</label>
+        <div class="form-control book_body">
+          <%= f.text_field :body %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="btn btn-success">
+          <%= f.submit "Update Book" %>
+        </div>
+        <% end %>
+        <a class="book_351" href="/books/351">Show</a> |
+  		  <a class="back" href="/books">Back</a>
+      </div>
+    </div>
   </div>
 </div>
-      </div></main>
-
-
-
-
-</body></html>

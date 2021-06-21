@@ -4,7 +4,7 @@ before_action :authenticate_user!
 
   def index
     @books = Book.all
-    @user = User.find(params[:id])
+    @user = current_user
     @book = Book.new
     @users = User.all
   end
