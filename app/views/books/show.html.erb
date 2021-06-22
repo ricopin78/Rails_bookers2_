@@ -25,8 +25,8 @@
       </table>
 
       <div class="row">
-        <% if @user == current_user %>
-          <%= link_to edit_user_path(current_user) do %>
+        <% if @book.user_id == current_user.id %>
+          <%= link_to edit_user_path(user) do %>
             <p class="btn btn-outline-secondary btn-block fas fa-user-cog edit_user_10"></p>
           <% end %>
         <% else %>
