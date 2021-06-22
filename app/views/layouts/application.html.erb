@@ -35,11 +35,11 @@
             <% else %>
               <li class="fas fa-home nav-link text-light">
               <%= link_to "Home", root_path %></li>
-              <li class="fas fa-users nav-link text-light">
+              <li class="fas fa-book fa-link text-light">
               <%= link_to "About",home_about_path  %></li>
-              <li class="fas fa-book-open nav-link text-light">
+              <li class="fas fa-user-plus nav-link text-light">
               <%= link_to "sign up", new_user_registration_path %></li>
-              <li class="fas fa-sign-out-alt nav-link text-light">
+              <li class="fas fa-sign-in-alt nav-link text-light">
               <%= link_to "login", new_user_session_path %></li>
             <% end %>
             </ul>
