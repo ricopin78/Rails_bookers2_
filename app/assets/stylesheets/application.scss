@@ -10,7 +10,6 @@ html {
     font-family: sans-serif;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
-
 }
 
 
@@ -151,6 +150,16 @@ optgroup,
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
+}
+
+textarea
+.form-control {
+    height: auto;
+}
+
+textarea {
+    overflow: auto;
+    resize: vertical;
 }
 
 button {
@@ -322,6 +331,10 @@ body {
 
 }
 
+.fa-user-cog{
+    width: 100%;
+}
+
 
 /* footer */
 
@@ -444,6 +457,7 @@ th {
 
 .form-group {
     margin-bottom: 1rem;
+    display:block;
 }
 
 label {
@@ -473,11 +487,19 @@ label {
     background-color: #28a745;
     border-color: #28a745;
 }
+
+.btn-info {
+    color: #fff;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+
 .btn-danger {
     color: #fff;
     background-color: #dc3545;;
     border-color: #dc3545;
 }
+
 
 thead {
     display: table-header-group;
