@@ -65,10 +65,26 @@
               <%= link_to @book.title, book_path %>
             </td>
             <td><%= @book.body %></td>
+
             <% if @bookuser == current_user %>
               <td><%= link_to"Edit",edit_book_path(@book), class: "btn btn-sm btn-success" %></td>
               <td><%= link_to"Destroy",book_path(@book), method: :delete, class: "btn btn-sm btn-danger" %></td>
             <% end %>
+
+            <td class="comments">
+              <% @book.book_comments.each do |book_comment| %>
+                <%= book_comment.user.name %>
+                <%= book_comment.created_at.strftime('%Y/%m/%d') %>
+                <%= book_comment.comment %>
+              <% end %>
+            </td>
+
+            <td class="new-comment">
+              <%= form_with(model:[@book, @book_comment], local: true) do |f| %>
+                <%= f.text_area :comment, rows:'5',placeholder:"Comment here" %>
+                <%= f.submit"submit" %>
+              <% end %>
+            </td>
           </tr>
         </tbody>
       </table>

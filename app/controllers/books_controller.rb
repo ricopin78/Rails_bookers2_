@@ -24,6 +24,7 @@ class BooksController < ApplicationController
     @bookuser = @book.user
     @user = current_user
     @newbook = Book.new
+    @book_comment = BookComment.new
   end
 
   def destroy
