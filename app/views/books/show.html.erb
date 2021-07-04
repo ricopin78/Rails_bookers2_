@@ -30,12 +30,16 @@
           <tr>
             <th>introduction</th>
             <th> <%= @bookuser.introduction %> </th>
-           </tr>
+          </tr>
+          <tr>
+            <th>follow</th>
+            <th><%= render 'users/follow_form', user: @bookuser %></th>
+          </tr>
         </tbody>
       </table>
 
       <div class="row">
-          <%= link_to edit_user_path(@bookuser.id) do %>
+          <%= link_to edit_user_path(@user.id) do %>
             <p class="btn btn-outline-secondary btn-block fas fa-user-cog edit_user_10"></p>
           <% end %>
       </div>
