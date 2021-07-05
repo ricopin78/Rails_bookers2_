@@ -1,25 +1,18 @@
-<p class="notice">
-  <% if book.errors.any? %>
-    <%= book.errors.count %>Errors
-    <% book.errors.full_messages.each do |message| %>
-      <%= message %>
-    <% end %>
-  <% end %>
-</p>
+<%= render 'errors/book_error', book: book%>
 
 <div class="col-md-3">
   <h2>User info</h2>
-  <%= attachment_image_tag current_user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+  <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
 
   <table class="table">
     <tbody>
       <tr>
         <th>name</th>
-        <th><%= current_user.name %></th>
+        <th><%= user.name %></th>
       </tr>
       <tr>
         <th>introduction</th>
-        <th> <%= current_user.introduction %> </th>
+        <th> <%= user.introduction %> </th>
       </tr>
       <%= render 'users/act', user: user %>
     </tbody>
