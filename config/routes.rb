@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'home/about' => 'homes#about'
 
   resources :users do
+    resource :relationships, only: [:create, :destroy]
     member do
       get :following, :followers
     end
@@ -17,6 +18,5 @@ Rails.application.routes.draw do
   resource :favorites, only: [:create, :destroy]
   resources :book_comments, only: [:create, :destroy]
   end
-  resource :relationships, only: [:create, :destroy]
 
 end
