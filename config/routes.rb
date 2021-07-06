@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'relationships/create'
-  get 'relationships/destroy'
   devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions' }
 
   root to: 'homes#top'
   get 'home/about' => 'homes#about'
+  get '/search' => 'searches#search'
 
   resources :users do
     resource :relationships, only: [:create, :destroy]

@@ -32,6 +32,7 @@
               <li class="fas fa-sign-out-alt nav-link text-light">
               <%= link_to "logout", destroy_user_session_path, method: :delete %></li>
             </ul>
+            <%= render 'searches/search' %>
           </div>
           <% else %>
           <div class="collapse navbar-collapse show" id="navbarNavDropdown">

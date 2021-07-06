@@ -1,0 +1,30 @@
+<% @records.each do |record| %>
+  <td>
+    <%= link_to user_path(record.user) do %>
+      <%= attachment_image_tag record.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
+    <% end %>
+  </td>
+  <td class ="record_351"><%= link_to record.title, record_path(record.id) %></td>
+  <td><%= record.body %></td>
+
+  <td>
+    <% if record.favorited_by?(current_user) %>
+    <p>
+    <%= link_to record_favorites_path(record), method: :delete do %>
+    ♥<%= record.favorites.count %>
+    <% end %>
+    </p>
+    <% else %>
+    <p>
+    <%= link_to record_favorites_path(record), method: :post do %>
+    ♡<%= record.favorites.count %>
+    <% end %>
+    </p>
+    <% end %>
+    </td>
+
+    <td class="comments">
+    <p>コメント件数：<%= @record.record_comments.count %></p>
+    </td>
+    </tr>
+    <% end %>
