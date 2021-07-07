@@ -1,30 +1,40 @@
-<% @records.each do |record| %>
-  <td>
-    <%= link_to user_path(record.user) do %>
-      <%= attachment_image_tag record.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
-    <% end %>
-  </td>
-  <td class ="record_351"><%= link_to record.title, record_path(record.id) %></td>
-  <td><%= record.body %></td>
+<% if @model == 'user' %>
+  <h3>【Usersモデルの検索結果】検索ワード：<%= @content %></h3>
+<% @records.each do |user| %>
+  <%= link_to user_path(user) do %>
+    <%= user.name %><br>
+  <% end %>
+<% end %>
 
-  <td>
-    <% if record.favorited_by?(current_user) %>
-    <p>
-    <%= link_to record_favorites_path(record), method: :delete do %>
-    ♥<%= record.favorites.count %>
+<% else @model == 'books' %>
+  <h3>【booksモデルの検索結果】検索ワード：<%= @content %></h3>
+<table>
+    <thead>
+        <tr>
+            <th>投稿者名</th>
+            <th>タイトル</th>
+            <th>本文</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="book">
+    <% @records.each do |book| %>
+      <tr>
+        <td><%= book.user.name %></td>
+        <td><%= book.title %></td>
+        <td><%= book.body %></td>
+        <td><%= link_to "詳細", book_path(book) %></td>
+        <% if book.user == current_user %>
+          <td><%= link_to "編集", edit_book_path(book) %></td>
+          <td><%= link_to "削除", book_path(book), method: :delete, remote: true %></td>
+        <% else %>
+          <td></td>
+          <td></td>
+        <% end %>
+      </tr>
     <% end %>
-    </p>
-    <% else %>
-    <p>
-    <%= link_to record_favorites_path(record), method: :post do %>
-    ♡<%= record.favorites.count %>
-    <% end %>
-    </p>
-    <% end %>
-    </td>
-
-    <td class="comments">
-    <p>コメント件数：<%= @record.record_comments.count %></p>
-    </td>
-    </tr>
-    <% end %>
+    </tbody>
+</table>
+<% end %>
