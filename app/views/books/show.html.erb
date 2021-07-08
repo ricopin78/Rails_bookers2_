@@ -56,10 +56,7 @@
             </td>
 
             <td class="new-comment">
-              <%= form_with(model:[@book, @book_comment], local: true) do |f| %>
-                <%= f.text_area :comment, rows:'5',placeholder:"Comment here" %>
-                <%= f.submit"submit" %>
-              <% end %>
+              <%= render 'book_comments/book_comment', book: @book %>
             </td>
           </tr>
         </tbody>
