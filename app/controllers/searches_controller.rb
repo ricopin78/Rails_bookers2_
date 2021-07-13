@@ -13,7 +13,6 @@ class SearchesController < ApplicationController
       if model == 'book'
         method == 'partial'
         Book.where('title LIKE ?', '%'+content+'%')
-        Book.where('body LIKE ?', '%'+content+'%')
       else
         method == 'partial'
         User.where('name LIKE ?', '%'+content+'%')
