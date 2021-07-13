@@ -4,7 +4,7 @@ class SearchesController < ApplicationController
     @content = params["search"]["content"]
     @method = params["search"]["method"]
     @records = search_for(@model,@content,@method).page(params[:page]).per(5)
-    
+
   end
 
   private
@@ -13,7 +13,6 @@ class SearchesController < ApplicationController
       if model == 'book'
         method == 'partial'
         Book.where('title LIKE ?', '%'+content+'%')
-        Book.where('body LIKE ?', '%'+content+'%')
       else
         method == 'partial'
         User.where('name LIKE ?', '%'+content+'%')
