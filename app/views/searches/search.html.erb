@@ -4,11 +4,26 @@
     <div class="col-md-8 offset-md-1">
       <% if @model == 'user' %>
       <h2>【Search Results】Word：<%= @content %></h2>
-        <% @records.each do |user| %>
-          <%= link_to user_path(user) do %>
-            <%= user.name %><br>
+      <table>
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>User</th>
+          </tr>
+        </thead>
+        <tbody id="book">
+          <% @records.each do |user| %>
+          <tr>
+            <td><%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></td>
+            <td><%= user.name %></td>
+            <td><%= link_to "Show", user_path(user) %></td>
+            <% if user == current_user %>
+              <td><%= link_to "Edit", edit_user_path(user) %></td>
+            <% end %>
+          </tr>
           <% end %>
-      <% end %>
+          </tbody>
+        </table>
 
       <% else @model == 'books' %>
       <h2>【Search Results】Word：<%= @content %></h2>
