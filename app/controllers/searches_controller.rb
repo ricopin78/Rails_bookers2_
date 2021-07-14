@@ -14,7 +14,7 @@ class SearchesController < ApplicationController
     def search_for(model,content,method)
       if model == 'book'
         method == 'partial'
-        Book.where('title LIKE ?', '%'+content+'%')
+        Book.where('body LIKE ? OR title LIKE ?','%'+content+'%','%'+content+'%')
       else
         method == 'partial'
         User.where('name LIKE ?', '%'+content+'%')
